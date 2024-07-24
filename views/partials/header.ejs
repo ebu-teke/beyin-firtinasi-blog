@@ -1,0 +1,52 @@
+<!DOCTYPE html  style="margin: 0;">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beyin Fırtınası - Blog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/main.css">
+</head>
+<body>
+    <div class="navbar">
+        <ul class="nav-list">
+            <li class="nav-item logo-box left">
+                <a href="/">
+                    <h1 class="logo">Beyin Fırtınası</h1>
+                </a>
+            </li>
+            <li class="nav-item left">
+                <% if(locals.page && locals.page === "main"){ %>
+                    <a href="/">
+                        <div class="nav-div navto active">Ana Sayfa</div>
+                    </a>
+                <% }else{ %>
+                    <a href="/">
+                        <div class="nav-div navto">Ana Sayfa</div>
+                    </a>
+                <% } %>
+            </li>
+            <li class="nav-item left">
+                <% if(locals.page && locals.page === "create"){ %>
+                    <a href="/create">
+                        <div class="nav-div navto active">Gönderi</div>
+                    </a>
+                <% }else{ %>
+                    <a href="/create">
+                        <div class="nav-div navto">Gönderi</div>
+                    </a>
+                <% } %>
+            </li>
+            <li class="nav-item profile">
+                <a href="/about">
+                    <div class="nav-div"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+                        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+                      </svg>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>

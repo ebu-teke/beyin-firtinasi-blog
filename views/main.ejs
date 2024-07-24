@@ -1,0 +1,39 @@
+<%- include("partials/header.ejs") %>
+<div class="controller">
+    <div class="container">
+        <div class="posts">
+            <% if(locals.posts.length > 0){ %>
+                <%  for(var i = 0; i < posts.length; i++) { %>
+                    <div class="post">
+                        <div class="post-left">
+                            <a href="/post/<%= i%>"><h3 class="post-title"><%= posts[i].title %></h3></a>
+                            <hr class="post-seperator">
+                            <p class="post-content"><%= posts[i].content %></p>
+                        </div> 
+                        <% var source = posts[i].image %>
+                        <img src="<%= source %>" alt="İmage" class="post-image">
+                    </div>
+                <% } %>
+            <% }else{ %>
+                <h1 class="blank-message">Henüz hiç gönderi yok.</h1>
+            <% } %>
+        </div>
+        <div class="sidebar">
+            <a href="/create"><button class="purple-button">Gönderi</button></a>
+            <hr class="sidebar-seperator">
+            <div class="recent-posts">
+                <% if(locals.posts.length > 0){ %>
+                    <%  for(var i = 0; i < posts.length; i++) { %>
+                        <div class="little-post">
+                            <a href="/post/<%=i%>"><p class="little-title"><%= posts[i].title %></p></a>
+                            <img src="<%= posts[i].image %>" alt="İmage" class="little-image" width="16px">
+                        </div>
+                    <% } %>
+                <% }else{ %>
+                    <p class="no-recent">Yakın gönderi yok.</p>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include("partials/footer.ejs") %>
